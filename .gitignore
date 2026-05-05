@@ -12,3 +12,5 @@ pwa/dist/
 Thumbs.db
 *.log
 .claude/
+*:Zone.Identifier
+*Zone.Identifier*
