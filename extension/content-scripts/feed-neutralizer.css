@@ -1,0 +1,145 @@
+/* Anchor — feed neutralizer CSS
+   Hides algorithmic feed areas on social media sites.
+   Direct navigation (profiles, DMs, search) is preserved.
+   The JS will inject a replacement panel. */
+
+/* ── Instagram ──────────────────────────────────────────────────────────── */
+
+/* Home feed (main scrollable timeline) */
+body.anchor-neutralized.instagram main[role="main"] > div > div:first-child > div > div > div > article,
+body.anchor-neutralized.instagram main[role="main"] > div > div:first-child > div > div > div > div[style*="padding-bottom"],
+body.anchor-neutralized.instagram ._aano { /* home feed scroller */
+  display: none !important;
+}
+
+/* Explore grid */
+body.anchor-neutralized.instagram main[role="main"] > div > div:first-child > div:not([class]) {
+  display: none !important;
+}
+
+/* Reels page */
+body.anchor-neutralized.instagram [class*="reel"],
+body.anchor-neutralized.instagram [class*="Reel"] {
+  display: none !important;
+}
+
+/* ── X / Twitter ─────────────────────────────────────────────────────────── */
+
+body.anchor-neutralized.twitter [aria-label="Timeline: Your Home Timeline"],
+body.anchor-neutralized.twitter [aria-label="Timeline: Following"],
+body.anchor-neutralized.twitter [data-testid="primaryColumn"] [aria-label*="Timeline"],
+body.anchor-neutralized.xdotcom [aria-label="Timeline: Your Home Timeline"],
+body.anchor-neutralized.xdotcom [aria-label="Timeline: Following"],
+body.anchor-neutralized.xdotcom [data-testid="primaryColumn"] [aria-label*="Timeline"] {
+  display: none !important;
+}
+
+/* Trends sidebar */
+body.anchor-neutralized.twitter [aria-label="Timeline: Trending now"],
+body.anchor-neutralized.twitter [data-testid="sidebarColumn"] [aria-label*="Trending"],
+body.anchor-neutralized.xdotcom [aria-label="Timeline: Trending now"],
+body.anchor-neutralized.xdotcom [data-testid="sidebarColumn"] [aria-label*="Trending"] {
+  display: none !important;
+}
+
+/* ── YouTube ─────────────────────────────────────────────────────────────── */
+
+/* Home recommendations */
+body.anchor-neutralized.youtube ytd-rich-grid-renderer,
+body.anchor-neutralized.youtube ytd-rich-grid-row {
+  display: none !important;
+}
+
+/* Shorts shelf (home and watch pages) */
+body.anchor-neutralized.youtube ytd-reel-shelf-renderer,
+body.anchor-neutralized.youtube ytd-shorts-lockup-view-model {
+  display: none !important;
+}
+
+/* Sidebar recommendations on watch page */
+body.anchor-neutralized.youtube #secondary ytd-compact-video-renderer,
+body.anchor-neutralized.youtube #secondary ytd-item-section-renderer {
+  display: none !important;
+}
+
+/* ── Reddit ──────────────────────────────────────────────────────────────── */
+
+/* Home/popular feed */
+body.anchor-neutralized.reddit .ListingLayout-outerContainer,
+body.anchor-neutralized.reddit [data-testid="post-container"],
+body.anchor-neutralized.reddit shreddit-feed {
+  display: none !important;
+}
+
+/* ── Facebook ────────────────────────────────────────────────────────────── */
+
+body.anchor-neutralized.facebook [role="feed"],
+body.anchor-neutralized.facebook [data-pagelet*="Feed"] {
+  display: none !important;
+}
+
+/* ── TikTok ──────────────────────────────────────────────────────────────── */
+
+body.anchor-neutralized.tiktok [class*="DivVideoFeedV2"],
+body.anchor-neutralized.tiktok [class*="DivMainFeed"],
+body.anchor-neutralized.tiktok main > div > div > div {
+  display: none !important;
+}
+
+/* ── Anchor panel (injected by JS) ──────────────────────────────────────── */
+
+.anchor-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 3rem 2rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #2C2820;
+  text-align: center;
+}
+
+.anchor-panel__quote {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-style: italic;
+  line-height: 1.55;
+  color: #2C2820;
+}
+
+.anchor-panel__source {
+  font-size: 0.82rem;
+  color: #8B7D6B;
+  font-family: system-ui, sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.anchor-panel__divider {
+  width: 2rem;
+  height: 1px;
+  background: rgba(139, 111, 71, 0.3);
+}
+
+.anchor-panel__task-label {
+  font-size: 0.7rem;
+  font-family: system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #B8A898;
+}
+
+.anchor-panel__task {
+  font-size: 0.95rem;
+  font-family: system-ui, sans-serif;
+  color: #2C2820;
+  font-weight: 500;
+}
+
+.anchor-panel__prompt {
+  font-size: 0.875rem;
+  font-family: system-ui, sans-serif;
+  font-style: italic;
+  color: #8B7D6B;
+}

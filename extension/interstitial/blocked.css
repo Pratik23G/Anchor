@@ -1,0 +1,137 @@
+@font-face {
+  font-family: "EB Garamond";
+  src: local("EB Garamond"),
+       url("../fonts/EBGaramond-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: local("EB Garamond Italic"),
+       url("../fonts/EBGaramond-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #FAF8F3;
+  color: #2C2820;
+  font-family: "EB Garamond", Georgia, "Times New Roman", serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 3rem 2rem;
+  max-width: 640px;
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+}
+
+/* ── Breath animation ───────────────────────────────────────────────────── */
+
+.breath-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.breath-ring {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 1px solid rgba(139, 111, 71, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.breath-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 40% 40%,
+    rgba(139, 111, 71, 0.25),
+    rgba(139, 111, 71, 0.08)
+  );
+  border: 1.5px solid rgba(139, 111, 71, 0.35);
+  transition: transform 4s ease-in-out;
+  will-change: transform;
+}
+
+.breath-label {
+  font-size: 0.875rem;
+  letter-spacing: 0.12em;
+  text-transform: lowercase;
+  color: #8B7D6B;
+  min-height: 1.25em;
+}
+
+/* ── Quote ──────────────────────────────────────────────────────────────── */
+
+.quote {
+  font-size: clamp(1.4rem, 3vw, 1.875rem);
+  font-style: italic;
+  line-height: 1.55;
+  color: #2C2820;
+  max-width: 520px;
+}
+
+.source {
+  font-size: 0.9rem;
+  color: #8B7D6B;
+  letter-spacing: 0.04em;
+  margin-top: -1.5rem;
+}
+
+/* ── Footer ─────────────────────────────────────────────────────────────── */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.timer {
+  font-size: 1rem;
+  color: #B8A898;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+}
+
+.back-link {
+  font-size: 0.85rem;
+  color: #8B7D6B;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.back-link:hover {
+  color: #2C2820;
+  border-bottom-color: #8B7D6B;
+}

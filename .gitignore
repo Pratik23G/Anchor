@@ -1,0 +1,14 @@
+node_modules/
+pwa/node_modules/
+dist/
+build/
+pwa/dist/
+.env
+.env.local
+*.key
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+.claude/

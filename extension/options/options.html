@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anchor — Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="page">
+
+    <header class="header">
+      <h1 class="brand">Anchor</h1>
+      <p class="subtitle">settings</p>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab active" data-tab="learning">Learning</button>
+      <button class="tab" data-tab="blocklist">Blocklist</button>
+      <button class="tab" data-tab="triggers">Triggers</button>
+      <button class="tab" data-tab="data">Data</button>
+    </nav>
+
+    <!-- Learning Tab -->
+    <section class="tab-panel active" id="tab-learning">
+      <p class="section-description">Set your learning topic for any day. Today is pre-selected.</p>
+
+      <div class="form-group">
+        <label class="label" for="planDate">Date</label>
+        <input class="input" type="date" id="planDate">
+      </div>
+      <div class="form-group">
+        <label class="label" for="planTopic">Topic</label>
+        <input class="input" type="text" id="planTopic" placeholder="e.g. Stoic philosophy — On the shortness of life">
+      </div>
+
+      <div class="form-group">
+        <label class="label">Resources <span class="label-hint">(up to 3)</span></label>
+        <div class="resource-row">
+          <input class="input resource-title" type="text" placeholder="Title" data-r="0">
+          <input class="input resource-url" type="url" placeholder="https://" data-r="0">
+        </div>
+        <div class="resource-row">
+          <input class="input resource-title" type="text" placeholder="Title" data-r="1">
+          <input class="input resource-url" type="url" placeholder="https://" data-r="1">
+        </div>
+        <div class="resource-row">
+          <input class="input resource-title" type="text" placeholder="Title" data-r="2">
+          <input class="input resource-url" type="url" placeholder="https://" data-r="2">
+        </div>
+      </div>
+
+      <button class="btn" id="saveLearning">Save</button>
+      <p class="save-status" id="learningSaved" hidden>Saved.</p>
+    </section>
+
+    <!-- Blocklist Tab -->
+    <section class="tab-panel" id="tab-blocklist" hidden>
+      <p class="section-description">One domain per line. No <code>https://</code> or <code>www.</code> prefix needed.</p>
+      <textarea class="textarea" id="blocklistText" rows="16" spellcheck="false"></textarea>
+      <button class="btn" id="saveBlocklist">Save &amp; apply rules</button>
+      <p class="save-status" id="blocklistSaved" hidden>Saved. Rules updated.</p>
+    </section>
+
+    <!-- Triggers Tab -->
+    <section class="tab-panel" id="tab-triggers" hidden>
+      <p class="section-description">One trigger word or phrase per line. Matches are case-insensitive.</p>
+      <textarea class="textarea" id="triggersText" rows="12" spellcheck="false"></textarea>
+      <button class="btn" id="saveTriggers">Save</button>
+      <p class="save-status" id="triggersSaved" hidden>Saved.</p>
+    </section>
+
+    <!-- Data Tab -->
+    <section class="tab-panel" id="tab-data" hidden>
+      <p class="section-description">Export or import all Anchor data as JSON. Use this to back up or transfer settings.</p>
+      <div class="data-actions">
+        <button class="btn" id="exportData">Export JSON</button>
+        <label class="btn btn-secondary" for="importFile">Import JSON
+          <input type="file" id="importFile" accept=".json" style="display:none">
+        </label>
+      </div>
+      <p class="save-status" id="dataStatus" hidden></p>
+
+      <hr class="divider">
+
+      <div class="form-group">
+        <label class="label" for="alignedStreak">Aligned days streak</label>
+        <input class="input input-narrow" type="number" id="alignedStreak" min="0">
+      </div>
+      <div class="form-group">
+        <label class="label" for="learningStreak">Learning days streak</label>
+        <input class="input input-narrow" type="number" id="learningStreak" min="0">
+      </div>
+      <button class="btn" id="saveStreaks">Save streaks</button>
+      <p class="save-status" id="streaksSaved" hidden>Saved.</p>
+    </section>
+
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

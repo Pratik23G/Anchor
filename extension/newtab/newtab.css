@@ -1,0 +1,232 @@
+@font-face {
+  font-family: "EB Garamond";
+  src: local("EB Garamond"),
+       url("../fonts/EBGaramond-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: local("EB Garamond Italic"),
+       url("../fonts/EBGaramond-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: local("Manrope"),
+       url("../fonts/Manrope-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: local("Manrope Medium"),
+       url("../fonts/Manrope-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #FAF8F3;
+  color: #2C2820;
+  font-family: "Manrope", system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  gap: 3rem;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.date {
+  font-size: 0.875rem;
+  color: #8B7D6B;
+  letter-spacing: 0.04em;
+}
+
+.streaks {
+  font-size: 0.8rem;
+  color: #B8A898;
+  letter-spacing: 0.03em;
+}
+
+/* ── Main content ────────────────────────────────────────────────────────── */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+}
+
+/* ── Quote ──────────────────────────────────────────────────────────────── */
+
+.quote-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.quote {
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: clamp(1.5rem, 2.8vw, 2rem);
+  font-style: italic;
+  line-height: 1.5;
+  color: #2C2820;
+  quotes: "\201C" "\201D";
+}
+
+.quote::before { content: open-quote; }
+.quote::after  { content: close-quote; }
+
+.source {
+  font-size: 0.82rem;
+  color: #8B7D6B;
+  letter-spacing: 0.04em;
+}
+
+/* ── Learning section ────────────────────────────────────────────────────── */
+
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #B8A898;
+  margin-bottom: 0.75rem;
+}
+
+.learning-card {
+  border-left: 2px solid rgba(139, 111, 71, 0.25);
+  padding-left: 1rem;
+}
+
+.learning-empty {
+  font-size: 0.875rem;
+  color: #8B7D6B;
+}
+
+.learning-empty a {
+  color: #8B6F47;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(139, 111, 71, 0.3);
+  transition: border-color 0.2s;
+}
+
+.learning-empty a:hover {
+  border-bottom-color: #8B6F47;
+}
+
+.learning-topic {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2C2820;
+  margin-bottom: 0.5rem;
+}
+
+.learning-resources {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.learning-resources li a {
+  font-size: 0.875rem;
+  color: #8B6F47;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(139, 111, 71, 0.25);
+  transition: border-color 0.2s;
+}
+
+.learning-resources li a:hover {
+  border-bottom-color: #8B6F47;
+}
+
+.learning-resources li a::after {
+  content: " ↗";
+  font-size: 0.75em;
+  opacity: 0.6;
+}
+
+.learning-done-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: #8B7D6B;
+  cursor: pointer;
+}
+
+.learning-done-label input[type="checkbox"] {
+  accent-color: #8B6F47;
+  width: 14px;
+  height: 14px;
+}
+
+/* ── Journal prompt ──────────────────────────────────────────────────────── */
+
+.journal-prompt {
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: #8B7D6B;
+}
+
+.journal-prompt::before { content: "" "; }
+.journal-prompt::after  { content: " ""; }
+
+/* ── Footer ─────────────────────────────────────────────────────────────── */
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.settings-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #C9BDB0;
+  padding: 0.25rem;
+  transition: color 0.2s;
+  line-height: 1;
+}
+
+.settings-btn:hover {
+  color: #8B7D6B;
+}

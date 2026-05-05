@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anchor</title>
+  <link rel="stylesheet" href="newtab.css">
+</head>
+<body>
+  <div class="page">
+
+    <header class="header">
+      <span class="date" id="dateDisplay"></span>
+      <span class="streaks" id="streaksDisplay"></span>
+    </header>
+
+    <main class="main">
+      <section class="quote-section">
+        <blockquote class="quote" id="quoteText"></blockquote>
+        <p class="source" id="quoteSource"></p>
+      </section>
+
+      <section class="learning-section" id="learningSection">
+        <h2 class="section-label">today's learning</h2>
+        <div class="learning-card" id="learningCard">
+          <p class="learning-empty" id="learningEmpty">
+            No topic set for today.
+            <a href="#" id="openOptions">Add one →</a>
+          </p>
+          <div class="learning-content" id="learningContent" hidden>
+            <p class="learning-topic" id="learningTopic"></p>
+            <ul class="learning-resources" id="learningResources"></ul>
+            <label class="learning-done-label">
+              <input type="checkbox" id="learningDone"> mark complete
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <section class="prompt-section">
+        <p class="journal-prompt" id="journalPrompt"></p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <button class="settings-btn" id="settingsBtn" title="Settings">&#9881;</button>
+    </footer>
+
+  </div>
+
+  <script src="../shared/content.js"></script>
+  <script src="newtab.js"></script>
+</body>
+</html>

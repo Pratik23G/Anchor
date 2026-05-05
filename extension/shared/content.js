@@ -1,0 +1,272 @@
+// Anchor — shared content library
+// Edit this file to update quotes, blocklist, and trigger words.
+// After editing, run: ./scripts/sync-content.sh
+// (or manually copy to extension/shared/content.js and pwa/src/data/content.json)
+
+const ANCHOR_CONTENT = {
+
+  quotes: [
+    // ── Stoic ──────────────────────────────────────────────────────────────
+    {
+      id: "s1",
+      text: "You have power over your mind, not outside events. Realize this, and you will find strength.",
+      source: "Marcus Aurelius, Meditations 6.2",
+      tags: ["stoic"]
+    },
+    {
+      id: "s2",
+      text: "The impediment to action advances action. What stands in the way becomes the way.",
+      source: "Marcus Aurelius, Meditations 5.20",
+      tags: ["stoic"]
+    },
+    {
+      id: "s3",
+      text: "Waste no more time arguing about what a good man should be. Be one.",
+      source: "Marcus Aurelius, Meditations 10.16",
+      tags: ["stoic", "discipline"]
+    },
+    {
+      id: "s4",
+      text: "It is not the man who has too little, but the man who craves more, that is poor.",
+      source: "Seneca, Letters to Lucilius 2.6",
+      tags: ["stoic", "intervention"]
+    },
+    {
+      id: "s5",
+      text: "Men are disturbed not by the things that happen, but by their opinions about those things.",
+      source: "Epictetus, Enchiridion 5",
+      tags: ["stoic"]
+    },
+    {
+      id: "s6",
+      text: "Make the best use of what is in your power, and take the rest as it happens.",
+      source: "Epictetus, Enchiridion 1",
+      tags: ["stoic", "discipline"]
+    },
+    {
+      id: "s7",
+      text: "Confine yourself to the present.",
+      source: "Marcus Aurelius, Meditations 2.14",
+      tags: ["stoic", "intervention"]
+    },
+    {
+      id: "s8",
+      text: "The soul becomes dyed with the colour of its thoughts.",
+      source: "Marcus Aurelius, Meditations 5.16",
+      tags: ["stoic", "discipline"]
+    },
+    {
+      id: "s9",
+      text: "First say to yourself what you would be; and then do what you have to do.",
+      source: "Epictetus, Discourses 3.23",
+      tags: ["stoic", "discipline"]
+    },
+    {
+      id: "s10",
+      text: "He is a wise man who does not grieve for the things which he has not, but rejoices for those which he has.",
+      source: "Epictetus",
+      tags: ["stoic", "intervention"]
+    },
+
+    // ── Hindu ──────────────────────────────────────────────────────────────
+    {
+      id: "h1",
+      text: "You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions. Never consider yourself the cause of the results of your activities, and never be attached to not doing your duty.",
+      source: "Bhagavad Gita 2.47",
+      tags: ["faith", "discipline"]
+    },
+    {
+      id: "h2",
+      text: "Let a man lift himself by himself; let him not degrade himself; for he himself is his friend, and he himself is his enemy.",
+      source: "Bhagavad Gita 6.5",
+      tags: ["faith", "discipline"]
+    },
+    {
+      id: "h3",
+      text: "The contacts of the senses with their objects give rise to cold and heat, pleasure and pain. They come and go; they are not permanent. Endure them, O Arjuna.",
+      source: "Bhagavad Gita 2.14",
+      tags: ["faith", "intervention"]
+    },
+    {
+      id: "h4",
+      text: "Arise, awake, and stop not until the goal is reached.",
+      source: "Katha Upanishad 1.3.14",
+      tags: ["faith", "discipline"]
+    },
+    {
+      id: "h5",
+      text: "Take up one idea. Make that one idea your life — think of it, dream of it, live on that idea. Let every part of your being be full of that idea, and just leave every other idea alone.",
+      source: "Swami Vivekananda",
+      tags: ["faith", "discipline"]
+    },
+    {
+      id: "h6",
+      text: "You cannot believe in God until you believe in yourself.",
+      source: "Swami Vivekananda",
+      tags: ["faith"]
+    },
+    {
+      id: "h7",
+      text: "Do your duty always, but without attachment to the fruits of your actions.",
+      source: "Bhagavad Gita 3.19",
+      tags: ["faith", "discipline"]
+    },
+    {
+      id: "h8",
+      text: "One who has controlled the mind and conquered the senses has achieved the highest. For such a person, both pleasure and pain are equal.",
+      source: "Bhagavad Gita 6.7",
+      tags: ["faith", "discipline"]
+    },
+    {
+      id: "h9",
+      text: "He who has faith has wisdom; he who has wisdom has peace; he who has peace has happiness.",
+      source: "Bhagavad Gita 4.39",
+      tags: ["faith"]
+    },
+    {
+      id: "h10",
+      text: "The wise grieve neither for the living nor for the dead. There was never a time when you did not exist, nor will there be any future when you will cease to be.",
+      source: "Bhagavad Gita 2.11–12",
+      tags: ["faith", "intervention"]
+    },
+
+    // ── Buddhist ───────────────────────────────────────────────────────────
+    {
+      id: "b1",
+      text: "Mind is the forerunner of all actions. If one speaks or acts with a serene mind, happiness follows, as a shadow that never departs.",
+      source: "Dhammapada 1.1–2",
+      tags: ["faith", "discipline"]
+    },
+    {
+      id: "b2",
+      text: "Hatred is never appeased by hatred in this world; it is appeased by love. This is an eternal law.",
+      source: "Dhammapada 1.5",
+      tags: ["faith"]
+    },
+    {
+      id: "b3",
+      text: "The present moment is the only moment available to us, and it is the door to all moments.",
+      source: "Thich Nhat Hanh",
+      tags: ["faith", "intervention"]
+    },
+    {
+      id: "b4",
+      text: "Whatever you frequently think and ponder upon, that will become the inclination of your mind.",
+      source: "Buddha, Majjhima Nikaya 19",
+      tags: ["discipline", "intervention"]
+    },
+    {
+      id: "b5",
+      text: "Heedfulness is the path to the deathless. Heedlessness is the path to death. The heedful do not die; the heedless are as if already dead.",
+      source: "Dhammapada 2.1",
+      tags: ["discipline"]
+    },
+    {
+      id: "b6",
+      text: "Irrigators lead the waters; fletchers straighten the arrow-shaft; carpenters shape the wood. Those who are virtuous discipline themselves.",
+      source: "Dhammapada 10.1",
+      tags: ["discipline"]
+    },
+    {
+      id: "b7",
+      text: "Nothing is worth clinging to.",
+      source: "Buddha, Mahāparinibbāna Sutta",
+      tags: ["intervention"]
+    },
+    {
+      id: "b8",
+      text: "Feelings come and go like clouds in a windy sky. Conscious breathing is my anchor.",
+      source: "Thich Nhat Hanh",
+      tags: ["intervention"]
+    },
+    {
+      id: "b9",
+      text: "This craving, accompanied by delight and lust, seeking delight here and there — this is the origin of suffering.",
+      source: "Buddha, Dhammacakkappavattana Sutta",
+      tags: ["intervention"]
+    },
+    {
+      id: "b10",
+      text: "If you let go a little, you will have a little peace. If you let go a lot, you will have a lot of peace. If you let go completely, you will have complete peace.",
+      source: "Ajahn Chah",
+      tags: ["intervention"]
+    },
+    {
+      id: "b11",
+      text: "In the seeing, there is only the seen. In the hearing, only the heard. In the sensing, only the sensed. In this way, you will not be swept away.",
+      source: "Buddha, Bahiya Sutta (Udana 1.10)",
+      tags: ["intervention", "faith"]
+    },
+    {
+      id: "b12",
+      text: "Whatever is subject to arising is subject to cessation.",
+      source: "Buddha, Mahāparinibbāna Sutta",
+      tags: ["intervention"]
+    },
+    {
+      id: "b13",
+      text: "He who has conquered himself is far greater than he who has conquered a thousand warriors in battle.",
+      source: "Dhammapada 8.4",
+      tags: ["discipline"]
+    },
+    {
+      id: "b14",
+      text: "A mind unshaken when touched by the worldly states — sorrowless, stainless, secure — this is the greatest blessing.",
+      source: "Buddha, Mangala Sutta",
+      tags: ["faith", "discipline"]
+    }
+  ],
+
+  blocklist: [
+    // Adult sites — extend this list as needed
+    "pornhub.com",
+    "xvideos.com",
+    "xnxx.com",
+    "xhamster.com",
+    "redtube.com",
+    "youporn.com",
+    "tube8.com",
+    "spankbang.com",
+    "eporner.com",
+    "4tube.com",
+    "onlyfans.com",
+    "fansly.com",
+    "chaturbate.com",
+    "cam4.com",
+    "myfreecams.com",
+    "stripchat.com",
+    "livejasmin.com",
+    "bongacams.com"
+  ],
+
+  triggerWords: [
+    "porn",
+    "pornography",
+    "xxx",
+    "nude",
+    "naked",
+    "nsfw",
+    "hentai",
+    "erotic",
+    "adult video",
+    "adult content"
+  ],
+
+  journalPrompts: [
+    "What am I grateful for today?",
+    "What challenged me today, and what did I learn?",
+    "Where did I act in alignment with my values?",
+    "What am I carrying that I need to set down?",
+    "What do I want tomorrow to feel like?",
+    "What small thing brought me peace today?",
+    "What would I tell my future self about today?"
+  ]
+
+};
+
+// Usable in both page context (window) and service worker context (self)
+if (typeof window !== "undefined") {
+  window.ANCHOR_CONTENT = ANCHOR_CONTENT;
+} else {
+  self.ANCHOR_CONTENT = ANCHOR_CONTENT;
+}
